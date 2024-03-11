@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Skeleton } from 'primereact/skeleton';
 import { TabView, TabPanel } from 'primereact/tabview';
 import { DataTable } from 'primereact/datatable';
@@ -11,9 +12,7 @@ const TableTabs = ({ data, style, colFields }) => {
                 <TabView>
                         <TabPanel header={"loading"} headerTemplate={() => <Skeleton width='5rem' height="1.5rem"/>} >
                             <DataTable value={items} className="p-datatable-striped">
-                                {colFields.map((fields) =>
-                                    <Column body={<Skeleton />} {...fields}/>
-                                )}
+                                {colFields.map((fields,ind) => <Column key={ind} body={<Skeleton />} {...fields}/>)}
                             </DataTable>
                         </TabPanel>
                 </TabView>
@@ -28,7 +27,7 @@ const TableTabs = ({ data, style, colFields }) => {
                     return(
                         <TabPanel header={label} key={ind}>
                             <DataTable value={data[label]}>
-                                {colFields.map((fields) => <Column  {...fields}/> )}
+                                {colFields.map((fields, ind) => <Column  key={ind} {...fields}/> )}
                             </DataTable>
                         </TabPanel>
                     );
@@ -38,4 +37,9 @@ const TableTabs = ({ data, style, colFields }) => {
     );
 };
 
+TableTabs.propTypes = {
+    data: PropTypes.objectOf(PropTypes.array).isRequired,
+    style: PropTypes.object,
+    colFields: PropTypes.arrayOf(PropTypes.object).isRequired
+};
 export default TableTabs;

@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import { Toolbar } from 'primereact/toolbar';
 
 
-export default function AppBar({ rightComponent = [], centerComponent = [] }) {
+function AppBar({ rightComponent = [], centerComponent = [] }) {
     const logo = <i className="pi pi-car"> Forecast - Reservamos</i>;
 
     return (
@@ -10,3 +11,9 @@ export default function AppBar({ rightComponent = [], centerComponent = [] }) {
         </div>
     )
 }
+
+AppBar.propTypes = {
+    rightComponent: PropTypes.element,
+    centerComponent: PropTypes.element
+};
+export default AppBar;

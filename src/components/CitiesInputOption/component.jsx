@@ -1,4 +1,5 @@
 import { useState, useEffect }  from "react";
+import PropTypes from "prop-types";
 import { Dropdown } from 'primereact/dropdown';
 import axios from "axios";
 
@@ -28,6 +29,10 @@ const DropDownCities = ({ callback }) => {
             placeholder="Selecciona ciudad." 
         />
     )
+};
+
+DropDownCities.propTypes = {
+    callback: PropTypes.func.isRequired
 };
 
 export default DropDownCities;
