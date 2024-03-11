@@ -18,7 +18,7 @@ Delete the container:
 -`docker container stop forecast-container ` 
 
 ### Execute in local machine
-Before to start, you should install/update the node version to the latest (![here](https://nodejs.org/en)). Type the following commands in the console:
+Before to start, you should install/update the node version to the latest ([here](https://nodejs.org/en)). Type the following commands in the console:
 
 - `yarn install`
 - `yarn run dev`
