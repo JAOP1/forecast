@@ -48,7 +48,15 @@ const ForecastDashboard = () => {
             <ViewBar centerComponent={
                 <DropDownCities callback={ (item) => setCity(item) }/>
             }/>
-            <TableTabs data={weatherData} style={{marginTop:'1%'}}/>
+            <TableTabs
+                data={weatherData}
+                style={{marginTop:'1%'}}
+                colFields={[
+                    {field:"hour", header:"Hour"},
+                    {field:"temp_min", header:"Min. Temperature"},
+                    {field:"temp_max", header:"Max. Temperature"}
+                ]}
+            />
             <Toast ref={toast}/>
         </div>
     );
