@@ -4,6 +4,7 @@ import { Toast } from 'primereact/toast';
 import ViewBar from "../../components/ViewBar";
 import DropDownCities from "../../components/CitiesInputOption";
 import TableTabs from "../../components/TableTabs/component";
+import { Skeleton } from "primereact/skeleton";
 const ForecastDashboard = () => {
     const toast = useRef(null);
     const [city, setCity] = useState(null);
@@ -47,7 +48,7 @@ const ForecastDashboard = () => {
             <ViewBar centerComponent={
                 <DropDownCities callback={ (item) => setCity(item) }/>
             }/>
-            <TableTabs data={weatherData}/>
+            <TableTabs data={weatherData} style={{marginTop:'1%'}}/>
             <Toast ref={toast}/>
         </div>
     );
