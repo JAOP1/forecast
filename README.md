@@ -1,7 +1,7 @@
 # Forecast - reservamos
 
 ## How to start
-To execute the web app, we have to overwrite the .env file with the Api key for the weather API.
+To execute the web app, we have to replace the field with the text **AddKeyHere** for the weather API in the .env file (attached in the challenge document).
 
 ### Execute Dockerfile
 As we can see in the root folder, it has a dockerfile with the steps required (install dependencies, upload required files and subsequent commands).
